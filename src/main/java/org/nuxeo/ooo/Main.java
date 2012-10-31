@@ -137,9 +137,11 @@ public class Main {
             out("Starting ooo manager");
             manager.startOOoManager();
             out("manager started : " + manager.isOOoManagerStarted());
-            out(" OfficeManager class is "
-                    + manager.getOfficeManager().getClass().getSimpleName());
-            converter = manager.getDocumentConverter();
+            if (manager.getOfficeManager() != null) {
+                out(" OfficeManager class is "
+                        + manager.getOfficeManager().getClass().getSimpleName());
+                converter = manager.getDocumentConverter();
+            }
         }
     }
 
